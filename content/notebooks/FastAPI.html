@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FastAPI Code &#8212; Mood Classification of Song</title>
+    <title>FastAPI Code &#8212; Classification of Customer Spending</title>
   
   
   
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="StreamLit Code" href="Streamlit.html" />
-    <link rel="prev" title="Code" href="Spotify_project_copy.html" />
+    <link rel="prev" title="Code Files" href="../code_section.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -143,7 +143,7 @@
   
   
   
-    <p class="title logo__title">Mood Classification of Song</p>
+    <p class="title logo__title">Classification of Customer Spending</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -166,21 +166,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../resume.html">Resume</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../code_section.html">Code Files</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Spotify_project_copy.html">Code</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">FastAPI Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Streamlit.html">StreamLit Code</a></li>
 </ul>
@@ -234,7 +219,7 @@
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/ShahaDeven/Mood_classification_book" target="_blank"
+<a href="https://github.com/abhi-dataprofile/Customer_jupyter-book" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -352,136 +337,81 @@
 <h1>FastAPI Code<a class="headerlink" href="#fastapi-code" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">UploadFile</span><span class="p">,</span> <span class="n">File</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 <span class="kn">import</span> <span class="nn">joblib</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">librosa</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">hmac</span>
-<span class="kn">import</span> <span class="nn">hashlib</span>
-<span class="kn">import</span> <span class="nn">base64</span>
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">import</span> <span class="nn">uvicorn</span>
-<span class="kn">import</span> <span class="nn">uuid</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">import</span> <span class="nn">joblib</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
+<span class="c1"># Load the trained RidgeClassifier model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;ridge_feature_engineering_model.joblib&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initialize FastAPI</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
-<span class="c1"># Load the pre-trained model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;random_forest_model.pkl&quot;</span><span class="p">)</span>
+<span class="c1"># Define the input schema for the POST request</span>
+<span class="k">class</span> <span class="nc">PredictRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">Annual_Income</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">Family_Size</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">Age</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">Work_Experience</span><span class="p">:</span> <span class="nb">int</span>
 
-<span class="c1"># ACRCloud API details (replace with your actual credentials)</span>
-<span class="n">access_key</span> <span class="o">=</span> <span class="s2">&quot;b64497762cda27a0361fd5a4a75a2e74&quot;</span>
-<span class="n">access_secret</span> <span class="o">=</span> <span class="s2">&quot;WFbyRGnZ9e0zlbnsoReqEGLscIJ5XosuDfaSZpY6&quot;</span>
-<span class="n">requrl</span> <span class="o">=</span> <span class="s2">&quot;https://identify-us-west-2.acrcloud.com/v1/identify&quot;</span>
-
-<span class="n">FEATURE_COLUMNS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;danceability&quot;</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="s2">&quot;normalized_loudness&quot;</span><span class="p">,</span> <span class="s2">&quot;tempo&quot;</span><span class="p">,</span> <span class="s2">&quot;valence&quot;</span><span class="p">,</span> <span class="s2">&quot;instrumentalness&quot;</span><span class="p">,</span> <span class="s2">&quot;liveness&quot;</span>
-<span class="p">]</span>
-
-<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/predict/&quot;</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">predict_mood</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="n">UploadFile</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="o">...</span><span class="p">)):</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received file: </span><span class="si">{</span><span class="n">file</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/predict&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">PredictRequest</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">unique_file_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
-        <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;temp_</span><span class="si">{</span><span class="n">unique_file_id</span><span class="si">}</span><span class="s2">.mp3&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-        
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">song</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-            <span class="n">duration_ms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">song</span><span class="p">)</span>
-            <span class="n">start_time</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">end_time</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">)</span>  
-            <span class="n">clipped_audio</span> <span class="o">=</span> <span class="n">song</span><span class="p">[</span><span class="n">start_time</span><span class="p">:</span><span class="n">end_time</span><span class="p">]</span>
-            <span class="n">clipped_path</span> <span class="o">=</span> <span class="s2">&quot;temp_clipped_audio.mp3&quot;</span>
-            <span class="n">clipped_audio</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">clipped_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mp3&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracted a 10-second audio clip for ACRCloud.&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error processing audio file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">sample_bytes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">clipped_path</span><span class="p">)</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">clipped_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">audio_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-            <span class="n">timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-            <span class="n">string_to_sign</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;POST</span><span class="se">\n</span><span class="s2">/v1/identify</span><span class="se">\n</span><span class="si">{</span><span class="n">access_key</span><span class="si">}</span><span class="se">\n</span><span class="s2">audio</span><span class="se">\n</span><span class="s2">1</span><span class="se">\n</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">sign</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span>
-                <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">access_secret</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">),</span> <span class="n">string_to_sign</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">),</span> <span class="n">digestmod</span><span class="o">=</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
-            <span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-
-            <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="s2">&quot;access_key&quot;</span><span class="p">:</span> <span class="n">access_key</span><span class="p">,</span>
-                <span class="s2">&quot;sample_bytes&quot;</span><span class="p">:</span> <span class="n">sample_bytes</span><span class="p">,</span>
-                <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">),</span>
-                <span class="s2">&quot;signature&quot;</span><span class="p">:</span> <span class="n">sign</span><span class="p">,</span>
-                <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;signature_version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-            <span class="p">}</span>
-            <span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sample&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;audio.mp3&quot;</span><span class="p">,</span> <span class="n">audio_data</span><span class="p">,</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">)}</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">requrl</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-
-            <span class="n">acr_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-            <span class="k">if</span> <span class="s2">&quot;status&quot;</span> <span class="ow">in</span> <span class="n">acr_data</span> <span class="ow">and</span> <span class="n">acr_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">][</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">metadata</span> <span class="o">=</span> <span class="n">acr_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;music&quot;</span><span class="p">,</span> <span class="p">[{}])[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="n">song_metadata</span> <span class="o">=</span> <span class="p">{</span>
-                    <span class="s2">&quot;Title&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">),</span>
-                    <span class="s2">&quot;Artist&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;artists&quot;</span><span class="p">,</span> <span class="p">[{}])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">),</span>
-                    <span class="s2">&quot;Album&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;album&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">),</span>
-                    <span class="s2">&quot;Release Date&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;release_date&quot;</span><span class="p">,</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">),</span>
-                <span class="p">}</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">song_metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;ACRCloud API Error: </span><span class="si">{</span><span class="n">acr_data</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Unknown error&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">song_metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Error querying ACRCloud API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
-
-        <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-        <span class="n">tempo</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">beat</span><span class="o">.</span><span class="n">beat_track</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
-        <span class="n">loudness</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-        <span class="n">normalized_loudness</span> <span class="o">=</span> <span class="p">(</span><span class="n">loudness</span> <span class="o">+</span> <span class="mi">50</span><span class="p">)</span> <span class="o">/</span> <span class="mi">50</span>  
-        <span class="n">danceability</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">tempogram</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-        <span class="n">valence</span> <span class="o">=</span> <span class="n">normalized_loudness</span>
-        <span class="n">energy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">rms</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">))</span>
-        <span class="n">instrumentalness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">hpss</span><span class="p">(</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-        <span class="n">liveness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">spectral_flatness</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">))</span>
-
-        <span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span>
-            <span class="s2">&quot;danceability&quot;</span><span class="p">:</span> <span class="n">danceability</span><span class="p">,</span>
-            <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="n">energy</span><span class="p">,</span>
-            <span class="s2">&quot;normalized_loudness&quot;</span><span class="p">:</span> <span class="n">normalized_loudness</span><span class="p">,</span>
-            <span class="s2">&quot;tempo&quot;</span><span class="p">:</span> <span class="n">tempo</span><span class="p">,</span>
-            <span class="s2">&quot;valence&quot;</span><span class="p">:</span> <span class="n">valence</span><span class="p">,</span>
-            <span class="s2">&quot;instrumentalness&quot;</span><span class="p">:</span> <span class="n">instrumentalness</span><span class="p">,</span>
-            <span class="s2">&quot;liveness&quot;</span><span class="p">:</span> <span class="n">liveness</span>
-        <span class="p">}])</span>
-
-        <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">FEATURE_COLUMNS</span><span class="p">]</span>
-
-        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">label_to_mood</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;Calm&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Energetic&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Happy&quot;</span><span class="p">,</span> 
-            <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;Instrumental&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Live&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s2">&quot;Neutral&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="s2">&quot;Sad&quot;</span>
+        <span class="c1"># Parse input into a dictionary</span>
+        <span class="n">input_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Annual_Income&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Annual_Income</span><span class="p">],</span>
+            <span class="s2">&quot;Family_Size&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Family_Size</span><span class="p">],</span>
+            <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Age</span><span class="p">],</span>
+            <span class="s2">&quot;Work_Experience&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Work_Experience</span><span class="p">],</span>
+            <span class="s2">&quot;Income_Per_Family&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Annual_Income</span> <span class="o">/</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Family_Size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span>  <span class="c1"># Float value</span>
+            <span class="s2">&quot;Age_Experience_Interaction&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Age</span> <span class="o">*</span> <span class="n">data</span><span class="o">.</span><span class="n">Work_Experience</span><span class="p">]</span>
         <span class="p">}</span>
-        <span class="n">mood</span> <span class="o">=</span> <span class="n">label_to_mood</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;mood&quot;</span><span class="p">:</span> <span class="n">mood</span><span class="p">}</span>
+        <span class="c1"># Convert the dictionary into a Pandas DataFrame</span>
+        <span class="n">input_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">input_dict</span><span class="p">)</span>
+
+        <span class="c1"># Ensure the DataFrame column order matches the expected columns</span>
+        <span class="n">expected_columns</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;Annual_Income&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Family_Size&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Age&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Work_Experience&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Income_Per_Family&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Age_Experience_Interaction&quot;</span>
+        <span class="p">]</span>
+        <span class="n">input_df</span> <span class="o">=</span> <span class="n">input_df</span><span class="p">[</span><span class="n">expected_columns</span><span class="p">]</span>  <span class="c1"># Reorder columns to match expected order</span>
+
+        <span class="c1"># Validate data types</span>
+        <span class="n">expected_dtypes</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Annual_Income&quot;</span><span class="p">:</span> <span class="s2">&quot;int64&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Family_Size&quot;</span><span class="p">:</span> <span class="s2">&quot;int64&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="s2">&quot;int64&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Work_Experience&quot;</span><span class="p">:</span> <span class="s2">&quot;int64&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Income_Per_Family&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Age_Experience_Interaction&quot;</span><span class="p">:</span> <span class="s2">&quot;int64&quot;</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Check if data types match the expected ones</span>
+        <span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">expected_dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">input_df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">!=</span> <span class="n">dtype</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data type mismatch for column &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39;. Expected: </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s2">, Got: </span><span class="si">{</span><span class="n">input_df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Pass the DataFrame to the model pipeline</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_df</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;prediction&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">])}</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error during prediction: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Failed to process the file: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)}</span>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">uvicorn</span>
+    <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -501,7 +431,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./content\notebooks"
+            path: "./content/notebooks"
         },
         predefinedOutput: true
     }
@@ -519,12 +449,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Spotify_project_copy.html"
+       href="../code_section.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Code</p>
+        <p class="prev-next-title">Code Files</p>
       </div>
     </a>
     <a class="right-next"
@@ -552,7 +482,7 @@
   <div class="footer-item">
     
 <p class="component-author">
-By Deven Rahul Shah
+By Abhishek Jadhav
 </p>
 
   </div>
