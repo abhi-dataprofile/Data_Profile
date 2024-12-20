@@ -1,0 +1,22 @@
+title: "Classification of Customer Spending"
+author: "Abhishek Jadhav"
+logo: ""
+execute:
+  execute_notebooks: "off"
+
+myst_enable_extensions:
+  - linkify
+  - jupyter
+
+html:
+  output_folder: docs
+  baseurl: /Mood_classification_book/
+  use_repository_button: true
+
+repository:
+  url: https://github.com/abhi-dataprofile/CustomerSpending
+  path_to_book: ./
+  branch: main
+
+
+
