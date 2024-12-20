@@ -14,7 +14,7 @@ html:
   use_repository_button: true
 
 repository:
-  url: https://github.com/abhi-dataprofile/CustomerSpending
+  url: https://github.com/abhi-dataprofile/Customer_jupyter-book
   path_to_book: ./
   branch: main
 
