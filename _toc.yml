@@ -8,5 +8,5 @@ chapters:
       - file: content/notebooks/EAS_503_PROJECT
       - file: content/notebooks/FastAPI
       - file: content/notebooks/Streamlit
-      - file: content/code_files/data_profile_report_copy.html
+      - file: content/code_files/Customer_Data_Profile_copy.html
   - file: content/links
