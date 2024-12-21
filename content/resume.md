@@ -9,6 +9,9 @@ Here is my resume:
 <embed src="Classification_jupter_book/Classification_book/content/Abhishek_Jadhav_Resume.pdf" width="100%" height="600px" type="application/pdf">
 
 
+
+
+
 <!-- <embed src="./Classification_jupter book/Classification_book/content/Abhishek_Jadhav_Resume.pdf" width="100%" height="600px" type="application/pdf"> -->
 
 ## Summary
