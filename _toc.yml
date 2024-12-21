@@ -5,7 +5,7 @@ chapters:
   - file: content/resume
   - file: content/code_section
     sections:
-      - file: content/notebooks/EAS_503_PROJECT
+      - file: content/notebooks/EAS_503_Project
       - file: content/notebooks/FastAPI
       - file: content/notebooks/Streamlit
       - file: content/code_files/Customer_Data_Profile_copy.html
