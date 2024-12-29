@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>StreamLit Code &#8212; Abhishek&#39;s Profile</title>
+    <title>Large Language Models (LLM) &#8212; Abhishek&#39;s Profile</title>
   
   
   
@@ -60,10 +60,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/Streamlit';</script>
-    <link rel="canonical" href="/Classification_book/content/notebooks/Streamlit.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/project/LLM';</script>
+    <link rel="canonical" href="/Classification_book/content/project/LLM.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Machine Learning" href="Machine_Learning.html" />
+    <link rel="prev" title="ML-Ops" href="ML_Ops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +117,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -163,17 +163,17 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../resume.html">Resume</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../FirstDayOfInternship.html">First Day of Internship</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Projects.html">Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../project/ETL.html">Data Engineering (ETL)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/PowerBI.html">Power BI Projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/Data_Migration.html">Data Migration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/Data_Governance.html">Data Governance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/ML_Ops.html">ML-Ops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/LLM.html">Large Language Models (LLM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/Machine_Learning.html">Machine Learning</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Projects.html">Projects</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ETL.html">Data Engineering (ETL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerBI.html">Power BI Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Migration.html">Data Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Governance.html">Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ML_Ops.html">ML-Ops</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Large Language Models (LLM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Machine_Learning.html">Machine Learning</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Story_telling.html">Data Stories on Real Online Datasets</a></li>
@@ -256,7 +256,7 @@
       
       
       
-      <li><a href="../../_sources/content/notebooks/Streamlit.ipynb" target="_blank"
+      <li><a href="../../_sources/content/project/LLM.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +266,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -319,7 +319,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -330,11 +332,23 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>StreamLit Code</h1>
+    <h1>Large Language Models (LLM)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-repository">GitHub Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skills-used">Skills Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-design">System Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-demonstration">Video Demonstration</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -344,63 +358,33 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="streamlit-code">
-<h1>StreamLit Code<a class="headerlink" href="#streamlit-code" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="c1"># Define the FastAPI endpoint</span>
-<span class="n">API_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;http://ec2-3-138-33-183.us-east-2.compute.amazonaws.com/predict&quot;</span>
-<span class="c1">#API_ENDPOINT = &quot;http://192.168.65.1:8000/predict&quot;</span>
-<span class="c1"># Streamlit app title</span>
-<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Classifier Model - Customer Spend Prediction&quot;</span><span class="p">)</span>
-
-<span class="c1"># User input form</span>
-<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Enter the Features for Classification&quot;</span><span class="p">)</span>
-<span class="n">annual_income</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span><span class="s2">&quot;Annual Income ($)&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">)</span>
-<span class="n">family_size</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span><span class="s2">&quot;Family Size&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">work_experience</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span><span class="s2">&quot;Work Experience (Years)&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-
-<span class="c1"># Predict button</span>
-<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Predict&quot;</span><span class="p">):</span>
-    <span class="c1"># Input validation</span>
-    <span class="k">if</span> <span class="n">annual_income</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">family_size</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">work_experience</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Please ensure all inputs are valid and greater than zero.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># Perform feature engineering</span>
-        <span class="n">income_per_family</span> <span class="o">=</span> <span class="n">annual_income</span> <span class="o">/</span> <span class="p">(</span><span class="n">family_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">age_experience_interaction</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">age</span> <span class="o">*</span> <span class="n">work_experience</span><span class="p">)</span>
-
-        <span class="c1"># Prepare data for API</span>
-        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;Annual_Income&quot;</span><span class="p">:</span> <span class="n">annual_income</span><span class="p">,</span>
-            <span class="s2">&quot;Family_Size&quot;</span><span class="p">:</span> <span class="n">family_size</span><span class="p">,</span>
-            <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="n">age</span><span class="p">,</span>
-            <span class="s2">&quot;Work_Experience&quot;</span><span class="p">:</span> <span class="n">work_experience</span><span class="p">,</span>
-            <span class="s2">&quot;Income_Per_Family&quot;</span><span class="p">:</span> <span class="n">income_per_family</span><span class="p">,</span>
-            <span class="s2">&quot;Age_Experience_Interaction&quot;</span><span class="p">:</span> <span class="n">age_experience_interaction</span>
-        <span class="p">}</span>
-
-        <span class="c1"># Send request to FastAPI</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">API_ENDPOINT</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-            <span class="n">response_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-            <span class="c1"># Display prediction result</span>
-            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-                <span class="c1">#prediction = response_data[&quot;prediction&quot;]</span>
-                <span class="n">st</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The predicted class is: </span><span class="si">{</span><span class="n">response_data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;detail&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Unknown error&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error connecting to the API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="large-language-models-llm">
+<h1>Large Language Models (LLM)<a class="headerlink" href="#large-language-models-llm" title="Link to this heading">#</a></h1>
+<section id="github-repository">
+<h2>GitHub Repository<a class="headerlink" href="#github-repository" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/abhi-dataprofile/BCAT-LLM-chatbot">BCAT LLM Chatbot</a></p>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Developed an AI-powered chatbot for BCAT using Generative AI techniques. The chatbot enables seamless information retrieval for teachers, students, and administration, streamlining tasks like attendance tracking and grade updates.</p>
+</section>
+<section id="skills-used">
+<h2>Skills Used<a class="headerlink" href="#skills-used" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Python</p></li>
+<li><p>Snowflake</p></li>
+<li><p>Generative AI</p></li>
+<li><p>Natural Language Processing (NLP)</p></li>
+</ul>
+</section>
+<section id="system-design">
+<h2>System Design<a class="headerlink" href="#system-design" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#"><span class="xref myst">View System Design</span></a></p>
+</section>
+<section id="video-demonstration">
+<h2>Video Demonstration<a class="headerlink" href="#video-demonstration" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#"><span class="xref myst">Watch Demo</span></a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -416,7 +400,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/notebooks"
+            path: "./content/project"
         },
         predefinedOutput: true
     }
@@ -433,12 +417,50 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ML_Ops.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ML-Ops</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Machine_Learning.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine Learning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-repository">GitHub Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skills-used">Skills Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-design">System Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-demonstration">Video Demonstration</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
