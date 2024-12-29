@@ -5,6 +5,7 @@ Throughout my career, I have worked on a variety of projects spanning **Data Eng
 
 ---
 
+
 ## Data Engineering (ETL)
 
 I developed a scalable ETL pipeline to process machine/battery-related issues.
