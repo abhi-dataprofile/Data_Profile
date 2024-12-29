@@ -1,4 +1,4 @@
-title: "Classification of Customer Spending"
+title: "Abhishek's Profile"
 author: "Abhishek Jadhav"
 logo: ""
 execute:
@@ -7,6 +7,8 @@ execute:
 myst_enable_extensions:
   - linkify
   - jupyter
+  - raw_html
+  - html_image
 
 html:
   output_folder: docs

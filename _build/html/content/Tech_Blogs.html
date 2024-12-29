@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tech Blogs &#8212; Abhishek&#39;s Profile</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/Tech_Blogs';</script>
+    <link rel="canonical" href="/Classification_book/content/Tech_Blogs.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Important Links" href="links.html" />
+    <link rel="prev" title="Failed Approaches on Problem Solving" href="Failed_Approches.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Abhishek's Profile</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resume.html">Resume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FirstDayOfInternship.html">First Day of Internship</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Projects.html">Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="project/ETL.html">Data Engineering (ETL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/PowerBI.html">Power BI Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/Data_Migration.html">Data Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/Data_Governance.html">Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/ML_Ops.html">ML-Ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/LLM.html">Large Language Models (LLM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/Machine_Learning.html">Machine Learning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Story_telling.html">Data Stories on Real Online Datasets</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Case_Studies.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Failed_Approches.html">Failed Approaches on Problem Solving</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tech Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Important Links</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/abhi-dataprofile/Customer_jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/Tech_Blogs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tech Blogs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-beginners">1. Docker for Beginners</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-docker">Why Use Docker?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-orchestrating-containers">2. Kubernetes: Orchestrating Containers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-with-github-actions">3. CI/CD with GitHub Actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-workflow">Setting Up a Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-as-code-with-terraform">4. Infrastructure as Code with Terraform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-terraform">Why Terraform?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlops-with-mlflow">5. MLOps with MLflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Key Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tech-blogs">
+<h1><a class="toc-backref" href="#id15" role="doc-backlink">Tech Blogs</a><a class="headerlink" href="#tech-blogs" title="Link to this heading">#</a></h1>
+<p>Below, you’ll find a collection of short tech blog entries, each discussing a different topic in the modern tech stack. From containerization to continuous delivery, these posts aim to provide quick insights, best practices, and actionable steps.</p>
+<nav class="contents" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#tech-blogs" id="id15">Tech Blogs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#docker-for-beginners" id="id16">1. Docker for Beginners</a></p></li>
+<li><p><a class="reference internal" href="#kubernetes-orchestrating-containers" id="id17">2. Kubernetes: Orchestrating Containers</a></p></li>
+<li><p><a class="reference internal" href="#ci-cd-with-github-actions" id="id18">3. CI/CD with GitHub Actions</a></p></li>
+<li><p><a class="reference internal" href="#infrastructure-as-code-with-terraform" id="id19">4. Infrastructure as Code with Terraform</a></p></li>
+<li><p><a class="reference internal" href="#mlops-with-mlflow" id="id20">5. MLOps with MLflow</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id21">Conclusion</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr class="docutils" />
+<section id="docker-for-beginners">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">1. Docker for Beginners</a><a class="headerlink" href="#docker-for-beginners" title="Link to this heading">#</a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<p>Docker is a platform that allows you to package and run applications in lightweight, isolated containers. It solves the classic “it works on my machine” problem by ensuring each container has everything it needs to run your application.</p>
+</section>
+<section id="why-use-docker">
+<h3>Why Use Docker?<a class="headerlink" href="#why-use-docker" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Consistency</strong>: Ensures the same environment across development, testing, and production.</p></li>
+<li><p><strong>Scalability</strong>: Easily spin up or shut down containers based on demand.</p></li>
+<li><p><strong>Efficiency</strong>: Containers are more resource-efficient than virtual machines.</p></li>
+</ul>
+</section>
+<section id="quick-start">
+<h3>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Install Docker</strong> on your local machine (Windows, macOS, or Linux).</p></li>
+<li><p><strong>Write a Dockerfile</strong> describing your app environment.</p></li>
+<li><p><strong>Build</strong> your Docker image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>myapp:v1<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run</strong> the container:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>myapp:v1
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="best-practices">
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Keep Dockerfiles simple and readable.</p></li>
+<li><p>Use small base images (e.g., Alpine) to minimize image size.</p></li>
+<li><p>Leverage multi-stage builds for more complex applications.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>Docker streamlines the process of deploying and distributing software, making it an essential tool in modern DevOps and microservices architectures.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="kubernetes-orchestrating-containers">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">2. Kubernetes: Orchestrating Containers</a><a class="headerlink" href="#kubernetes-orchestrating-containers" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Kubernetes (K8s) is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications. It addresses the challenge of coordinating containers across multiple hosts.</p>
+</section>
+<section id="key-components">
+<h3>Key Components<a class="headerlink" href="#key-components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Pods</strong>: The smallest deployable units in Kubernetes, often containing one container (or a tightly coupled set of containers).</p></li>
+<li><p><strong>Services</strong>: Provide a stable networking endpoint and load balancing across pods.</p></li>
+<li><p><strong>Deployments</strong>: Manage the desired state of your application, including rolling updates.</p></li>
+<li><p><strong>Ingress</strong>: Directs external traffic to internal services via HTTP/HTTPS routing.</p></li>
+</ul>
+</section>
+<section id="use-cases">
+<h3>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Managing microservices at scale.</p></li>
+<li><p>Autoscaling applications based on resource usage.</p></li>
+<li><p>Rolling updates and rollbacks for zero-downtime deployments.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Best Practices<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use <strong>health checks</strong> (liveness and readiness probes) to ensure app health.</p></li>
+<li><p>Store sensitive data in <strong>Secrets</strong> rather than environment variables.</p></li>
+<li><p>Keep a close eye on resource limits/requests to avoid cluster resource exhaustion.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Conclusion<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Kubernetes brings reliability and scalability to containerized environments, making it an industry-standard solution for production deployments.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ci-cd-with-github-actions">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">3. CI/CD with GitHub Actions</a><a class="headerlink" href="#ci-cd-with-github-actions" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>Introduction<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>GitHub Actions is a powerful CI/CD platform built into GitHub. It allows you to automate tasks—such as building, testing, and deploying code—whenever certain events occur in your repository (e.g., code push, pull request creation).</p>
+</section>
+<section id="setting-up-a-workflow">
+<h3>Setting Up a Workflow<a class="headerlink" href="#setting-up-a-workflow" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Create a .github/workflows folder</strong> in your repository.</p></li>
+<li><p><strong>Add a YAML file</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">ci.yml</span></code>) in that folder:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI Pipeline</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build-and-test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Node</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-node@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">node-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm install</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm test</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Commit and push</strong> the file to your repository.</p></li>
+<li><p>Every time you push code or open a pull request, GitHub Actions will automatically trigger this workflow.</p></li>
+</ol>
+</section>
+<section id="id5">
+<h3>Best Practices<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Use Caching</strong>: Speeds up builds by caching dependencies (e.g., Node modules).</p></li>
+<li><p><strong>Environment Separation</strong>: Set up different workflows or environment variables for staging, production, etc.</p></li>
+<li><p><strong>Secrets Management</strong>: Store API keys, tokens, and other sensitive data in GitHub Secrets, not in your code.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Conclusion<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>GitHub Actions offers a straightforward way to implement CI/CD directly on GitHub, streamlining your development process while keeping everything in a single platform.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="infrastructure-as-code-with-terraform">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">4. Infrastructure as Code with Terraform</a><a class="headerlink" href="#infrastructure-as-code-with-terraform" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>Introduction<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Terraform is an open-source tool that lets you define and provision infrastructure across various cloud providers using a declarative configuration language.</p>
+</section>
+<section id="why-terraform">
+<h3>Why Terraform?<a class="headerlink" href="#why-terraform" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Consistency</strong>: Store your entire infrastructure setup in version control.</p></li>
+<li><p><strong>Scalability</strong>: Manage complex, multi-cloud environments using modular code.</p></li>
+<li><p><strong>Repeatability</strong>: Quickly replicate environments for staging, testing, or production.</p></li>
+</ul>
+</section>
+<section id="example-workflow">
+<h3>Example Workflow<a class="headerlink" href="#example-workflow" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Write</strong> <code class="docutils literal notranslate"><span class="pre">.tf</span></code> files describing your resources (e.g., AWS EC2, S3).</p></li>
+<li><p><strong>Initialize</strong> Terraform:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform<span class="w"> </span>init
+</pre></div>
+</div>
+</li>
+<li><p><strong>Plan</strong> the changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform<span class="w"> </span>plan
+</pre></div>
+</div>
+</li>
+<li><p><strong>Apply</strong> the changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform<span class="w"> </span>apply
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id8">
+<h3>Best Practices<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use <strong>remote state</strong> (e.g., store in AWS S3) to share state among team members.</p></li>
+<li><p>Create <strong>modules</strong> to encapsulate reusable infrastructure code.</p></li>
+<li><p>Always run <code class="docutils literal notranslate"><span class="pre">terraform</span> <span class="pre">plan</span></code> before <code class="docutils literal notranslate"><span class="pre">apply</span></code> to preview proposed changes.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>Conclusion<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Infrastructure as Code (IaC) ensures reliable, automated, and traceable management of your infrastructure, reducing manual steps and the potential for human error.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mlops-with-mlflow">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">5. MLOps with MLflow</a><a class="headerlink" href="#mlops-with-mlflow" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>Introduction<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>MLflow is an open-source platform that helps manage the entire machine learning lifecycle, including experiment tracking, project packaging, model deployment, and more. It’s widely considered part of the MLOps toolkit.</p>
+</section>
+<section id="id11">
+<h3>Key Components<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>MLflow Tracking</strong>: Record and query experiments, parameters, metrics, and artifacts (e.g., models, data).</p></li>
+<li><p><strong>MLflow Projects</strong>: Standardize how to package your code for reproducibility.</p></li>
+<li><p><strong>MLflow Models</strong>: Provide a consistent interface for model packaging and deployment.</p></li>
+<li><p><strong>Model Registry</strong>: Store and manage different versions of your ML models, stage them from development to production.</p></li>
+</ul>
+</section>
+<section id="typical-workflow">
+<h3>Typical Workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Set up MLflow Tracking</strong> server to log experiments.</p></li>
+<li><p><strong>Train your model</strong> locally or on a remote cluster, logging metrics and artifacts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mlflow</span>
+
+<span class="n">mlflow</span><span class="o">.</span><span class="n">start_run</span><span class="p">()</span>
+<span class="n">mlflow</span><span class="o">.</span><span class="n">log_param</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">mlflow</span><span class="o">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s2">&quot;rmse&quot;</span><span class="p">,</span> <span class="mf">0.93</span><span class="p">)</span>
+<span class="c1"># Save model artifact</span>
+<span class="n">mlflow</span><span class="o">.</span><span class="n">sklearn</span><span class="o">.</span><span class="n">log_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">)</span>
+<span class="n">mlflow</span><span class="o">.</span><span class="n">end_run</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Review experiments</strong> in the MLflow UI to compare runs and pick the best model.</p></li>
+<li><p><strong>Register</strong> the best model in the Model Registry for easy collaboration and deployment.</p></li>
+<li><p><strong>Deploy</strong> the model to a production environment or serving platform.</p></li>
+</ol>
+</section>
+<section id="id12">
+<h3>Best Practices<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Standard Naming Conventions</strong>: Use clear run names, model versioning, and tagging.</p></li>
+<li><p><strong>Automate Model Deployment</strong>: Integrate MLflow with CI/CD pipelines (e.g., GitHub Actions) to streamline the promotion of models from staging to production.</p></li>
+<li><p><strong>Version Control</strong>: Keep MLflow Project files and experiment code in a repository for reproducibility and collaboration.</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>Conclusion<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>MLflow is a flexible, open-source approach to MLOps. It centralizes experiment tracking, model packaging, and deployment, enabling data scientists to iterate faster and DevOps teams to ensure reliable production deployments.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Conclusion</a><a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p>From containerization with Docker to deploying full-scale ML pipelines with MLflow, each layer of the modern tech stack plays a vital role in delivering reliable, scalable, and efficient solutions. Leveraging GitHub Actions for CI/CD, Terraform for infrastructure, and Kubernetes for orchestration completes a robust DevOps and MLOps pipeline, ready for production-grade applications.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Failed_Approches.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Failed Approaches on Problem Solving</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="links.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Important Links</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-beginners">1. Docker for Beginners</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-docker">Why Use Docker?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-orchestrating-containers">2. Kubernetes: Orchestrating Containers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-with-github-actions">3. CI/CD with GitHub Actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-workflow">Setting Up a Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-as-code-with-terraform">4. Infrastructure as Code with Terraform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-terraform">Why Terraform?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlops-with-mlflow">5. MLOps with MLflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Key Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Abhishek Jadhav
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

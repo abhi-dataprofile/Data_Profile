@@ -3,10 +3,21 @@ root: content/index
 
 chapters:
   - file: content/resume
-  - file: content/code_section
+  - file: content/FirstDayOfInternship
+  - file: content/Projects
     sections:
-      - file: content/notebooks/EAS_503_Project
-      - file: content/notebooks/FastAPI
-      - file: content/notebooks/Streamlit
-      - file: content/code_files/Customer_Data_Profile_copy.html
+      - file: content/project/ETL
+      - file: content/project/PowerBI
+      - file: content/project/Data_Migration
+      - file: content/project/Data_Governance
+      - file: content/project/ML_Ops
+      - file: content/project/LLM
+      - file: content/project/Machine_Learning
+  - file: content/Story_telling
+  - file: content/Case_Studies
+  - file: content/Failed_Approches
+  - file: content/Tech_Blogs
   - file: content/links
+
+  
+

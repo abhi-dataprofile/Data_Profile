@@ -5,9 +5,9 @@ Here are the links to my project resources:
 <div markdown="1">
     <a href="http://3.138.33.183:8501/" target="_blank">Deployed Model</a>
 </div>
-<h3 style="font-size:18px;">MLflow Experiments:</h3>
+<h3 style="font-size:18px;">Linkedin:</h3>
 <div markdown="1">
-    <a href="https://dagshub.com/abhicjadhav/my-first-repo.mlflow/#/experiments/2?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D" target="_blank">MLFlow Experiments</a>
+    <a href="https://www.linkedin.com/in/abhishekdata/target="_blank">Linkedin</a>
 </div>
 <h3 style="font-size:18px;">DagsHub:</h3>
 <div markdown="1">
